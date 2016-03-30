@@ -1,6 +1,6 @@
 package br.unipe.cc.modelo;
 
-public class Item {
+public class Item implements Comparable<Item> {
 	private int codigo;
 	private String descricao;
 
@@ -27,8 +27,13 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [codigo=" + codigo + ", descricao=" + descricao + "]";
+		return "\nItem [codigo=" + codigo + ", descricao=" + descricao + "]";
 	}
-	
-	
+
+	@Override
+	public int compareTo(Item item)	{
+		if	(this.codigo < item.codigo) return -1;
+		if	(this.codigo > item.codigo)	return	1;
+		return	0;
+	}
 }
