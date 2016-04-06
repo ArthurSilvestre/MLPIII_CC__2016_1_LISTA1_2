@@ -1,11 +1,13 @@
 package br.unipe.cc.modelo;
 
-public class Aluno<T> extends Pessoa implements Comparable<T> {
+public class Aluno extends Pessoa implements Comparable<Aluno> {
 	private double media;
+	private int faltas;
 
-	public Aluno(int matricula, String nome, double media) {
+	public Aluno(int matricula, String nome, double media, int faltas) {
 		super(matricula, nome);
 		this.media = media;
+		this.faltas = faltas;
 	}
 
 	public double getMedia() {
@@ -15,16 +17,22 @@ public class Aluno<T> extends Pessoa implements Comparable<T> {
 	public void setMedia(double media) {
 		this.media = media;
 	}
+	
+	public int getFaltas(){
+		return faltas;
+	}
+	
+	public void setFaltas(int faltas){
+		this.faltas = faltas;
+	}
 
 	@Override
 	public String toString() {
-		return "Aluno [media=" + media + "]";
+		return "Aluno [pessoa=" + super.toString() + "media=" + media + "]\n";
 	}
 
+	@Override
 	public int compareTo(Aluno aluno){
-		if	(this.matricula < aluno.matricula) return -1;
-		if	(this.matricula > aluno.matricula)	return	1;
-		return	0;
+		return this.nome.compareTo(aluno.nome);
 	}
-
 }

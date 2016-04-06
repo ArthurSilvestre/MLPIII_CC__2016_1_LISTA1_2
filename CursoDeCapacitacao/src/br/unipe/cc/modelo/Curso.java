@@ -1,12 +1,11 @@
 package br.unipe.cc.modelo;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Curso{
 	private Professor professor; 
-	private Set<Aluno> listaDeAlunos = new HashSet<Aluno>();
+	private Set<Aluno> listaDeAlunos = new TreeSet<Aluno>();
 	private String nome;
 	private int numeroDeIdentificacao;
 	
@@ -17,11 +16,6 @@ public class Curso{
 		this.numeroDeIdentificacao = numeroDeIdentificacao;
 	}
 
-	public void ordenarAlunos(){
-		Collections.sort(listaDeAlunos);
-	}
-	
-	
 	public Professor getProfessor() {
 		return professor;
 	}
@@ -56,7 +50,7 @@ public class Curso{
 
 	@Override
 	public String toString() {
-		return "Curso [professor=" + professor + ", listaDeAlunos=" + listaDeAlunos + ", nome=" + nome
+		return "Curso: \n   professor=" + professor + "\n   listaDeAlunos:\n" + listaDeAlunos + ", nome=" + nome
 				+ ", numeroDeIdentificacao=" + numeroDeIdentificacao + "]";
 	}
 	

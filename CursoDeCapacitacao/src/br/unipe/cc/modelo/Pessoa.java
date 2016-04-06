@@ -5,7 +5,6 @@ public class Pessoa{
 	protected String nome;
 
 	public Pessoa(int matricula, String nome) {
-		super();
 		this.matricula = matricula;
 		this.nome = nome;
 	}
@@ -28,7 +27,14 @@ public class Pessoa{
 
 	@Override
 	public String toString() {
-		return "Pessoa [metricula=" + matricula + ", nome=" + nome + "]";
+		return "Metricula = " + matricula + ", Nome = " + nome;
+	}
+
+	public boolean equals(Aluno pessoa) {
+		if((pessoa.matricula == this.matricula) || pessoa.nome == this.nome)
+			return true;
+		else 
+			return false;
 	}
 
 }
