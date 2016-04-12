@@ -17,8 +17,6 @@ public class Programa {
 		Set<Aluno> listaDeAlunos = new TreeSet<Aluno>();
 		Iterator<Aluno> iterator = null;
 
-
-		
 		Curso curso = new Curso(professor, listaDeAlunos,"Ciências da Computação",1);
 		
 		while(opcao != 0){
